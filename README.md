@@ -63,15 +63,18 @@ As we can see the structure of our `src` we have many file entries both JavaScri
 │                      └──index.pug
 ```
 
-**Build**
+**Dist**
 
 ```text
 dist/
-  └──assets 
-        ├──js
-        │  └──test.js
-        └──css    
-            └──test.css
+  ├──assets 
+  │      ├──js
+  │      │  └──test.js
+  │      └──css    
+  │          └──test.css
+  └──views
+        └──html-templates
+                └──index.html
 ```
 
 <h2 align="center"> Developed with </h2>
