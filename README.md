@@ -65,18 +65,38 @@ This webpack was basically made to supply the need of multiple entries like sass
   ```
 This variabel is responsible for making the exchange of files from your machine to `https://{{yourstore}}.vtexcommercestable.com.br/arquivos/` from vtex. Remembering that the files must have the same name.
 
+After you have done the basic configuration for BrowserSync to work
+
+**Starting development environment**
+
+  `yarn run dev`
+
+If everything is ok the terminal will show this message:
+
+```js
+[Browsersync] Proxying: https://{{yourStore}}.vtexcommercestable.com.br
+[Browsersync] Access URLs:
+ --------------------------------------------
+    Local: https://localhost:3000
+ External: https://{{yourStore}}.vtexlocal.com.br:3000
+ --------------------------------------------
+```
+
+After you start the terminal it will open a link for you to login with your store credentials and after you have provided your store credentials you can develop everything in this url:
+
+`https://{{yourStore}}.vtexlocal.com.br:3000/`
 
 
 
-**Tasks**
+##Tasks
 
 * JavaScript Module Pattern
 * [Sass](https://sass-lang.com)
  
 
-## Exemple 
+### Exemple 
 
-As we can see the structure of our `src` we have many file entries both JavaScript, Sass and Pug
+As we can see the structure of our `src` we have many file entries both JavaScript and Sass.
 
 ```sh
 ├── src
@@ -97,7 +117,7 @@ As we can see the structure of our `src` we have many file entries both JavaScri
 │               
 ```
 
-**Dist**
+**Build**
 
 ```text
 dist/
