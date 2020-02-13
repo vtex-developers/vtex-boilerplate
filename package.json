@@ -1,21 +1,22 @@
 {
-  "name": "Webpack-vtex",
-  "version": "1.0.0",
-  "description": "",
+  "name": "vtex-webpack",
+  "version": "2.0.0",
+  "description": "Webpack to development store in vtex",
   "main": "src",
   "scripts": {
-    "prod": "webpack --config webpack.config.prod.js",
-    "dev": "webpack --config webpack.config.dev.js --watch"
+    "dev": "webpack --config webpack.config.js --watch  --mode development",
+    "build": "webpack --config webpack.config.js  --mode production"
   },
   "author": {
     "name": "Rodrigo Reis",
     "email": "br.rodrigoreis@gmail.com",
-    "homepage": "www.rodrigoreis.xyz"
+    "homepage": "www.rodrigoreis.me"
   },
   "license": "ISC",
   "dependencies": {
     "glob": "^7.1.4",
     "html-webpack-pug-plugin": "^2.0.0",
+    "node-sass": "^4.13.1",
     "sass-rem": "^2.0.1",
     "stylelint": "^10.1.0",
     "stylelint-config-recommended-scss": "^3.3.0",
@@ -31,14 +32,13 @@
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
     "babel-runtime": "^6.26.0",
+    "browser-sync": "^2.26.7",
+    "browser-sync-webpack-plugin": "^2.2.2",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.1.0",
-    "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.8.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
-    "pug": "^2.0.4",
-    "pug-loader": "^2.4.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.36.1",
