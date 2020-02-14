@@ -165,5 +165,5 @@ Give a ⭐️ if you liked!
  
 ### Credits
 
-Special thanks to [Lucas Ruy](https://github.com/LucasRuy), one of the best developers I've ever worked with.
+Special thanks to [Lucas Ruy](https://github.com/LucasRuy), one of the best developers I've ever worked with.<br />
 Special thanks to [Cristiano Rocha](https://github.com/CrisFeit), inspired by your [VtexSync](https://github.com/CrisFeit/Vtex-Sync).
