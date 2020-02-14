@@ -9,7 +9,7 @@ const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 
-const storeName = 'vult';
+const storeName = '';
 const vtex = '/dist';
 
 const config = {
