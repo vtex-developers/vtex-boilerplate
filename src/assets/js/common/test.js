@@ -1,4 +1,4 @@
-import '../../scss/common/index.scss'
-import Test from './modules/test/index';
+import Test from './modules/test';
+import '../../scss/common/index.scss';
 
-document.addEventListener('DOMContentLoaded', Test.init());
+document.addEventListener('DOMcontentLoaded', Test.init());
