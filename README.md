@@ -77,8 +77,8 @@ If everything is ok the terminal will show this message:
 [Browsersync] Proxying: https://{{yourStore}}.vtexcommercestable.com.br
 [Browsersync] Access URLs:
  --------------------------------------------
-    Local: https://localhost:3000
- External: https://{{yourStore}}.vtexlocal.com.br:3000
+  Local: https://localhost:3000
+  External: https://{{yourStore}}.vtexlocal.com.br:3000
  --------------------------------------------
 ```
 
@@ -166,3 +166,4 @@ Give a ⭐️ if you liked!
 ### Credits
 
 Special thanks to [Lucas Ruy](https://github.com/LucasRuy), one of the best developers I've ever worked with.
+Special thanks to [Cristiano Rocha](https://github.com/CrisFeit), inspired by your [VtexSync](https://github.com/CrisFeit/Vtex-Sync).
