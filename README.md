@@ -44,7 +44,7 @@ This webpack was basically made to supply the need of multiple entries like Java
       serveStatic: [
         {
           route: '/arquivos',
-          dir: [vtex],
+          dir: [VTEX_JS, VTEX_CSS],
         },
       ],
     }), 
