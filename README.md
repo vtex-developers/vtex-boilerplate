@@ -88,7 +88,7 @@ After you start the terminal it will open a link for you to login with your stor
 
 
 
-##Tasks
+## Tasks
 
 * JavaScript Module Pattern
 * [Sass](https://sass-lang.com)
@@ -96,7 +96,7 @@ After you start the terminal it will open a link for you to login with your stor
 
 ### Exemple 
 
-As we can see the structure of our `src` we have many file entries both JavaScript and Sass.
+As we can see the structure of our `src` we have many file entries both Javascript and Sass.
 
 ```sh
 ├── src
@@ -110,12 +110,18 @@ As we can see the structure of our `src` we have many file entries both JavaScri
 │   │            └──common
 │   │                   ├──config
 │   │                   ├──layout   
-│   │                   └──index.scss   
-│   └──views
-│         └──template
-│               └──Store-Home.html
-│               
+│   │                   └──index.scss
 ```
+
+You need `import` Sass inside Javascript
+
+`test.js`
+
+```js
+import '../../scss/common/index.scss'
+```
+
+The output of the Sass file will be with the same name as the Javascript file.
 
 **Build**
 
@@ -148,10 +154,14 @@ dist/
 * Website: [rodrigo.me](https://www.rodrigoreis.me/)
 
 
+## 📝 License
+
+Copyright © 2019 [Rodrigo Reis](https://github.com/rodrigoreeis).<br />
+This project is [MIT](https://github.com/vtex-developers/vtex-webpack/blob/master/LICENSE) licensed.
+
 ### Show your support
 
 Give a ⭐️ if you liked!
-
  
 ### Credits
 
