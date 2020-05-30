@@ -4,7 +4,7 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const { CleanWebpackPlugin }= require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const STORE_NAME = 'vult';
+const STORE_NAME = '';
 
 const PATHS = {
 	dist: path.join(__dirname, '../dist'),
