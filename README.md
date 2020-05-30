@@ -1,4 +1,4 @@
-<h2 align="center">Getting Started</h2>
+<!-- <h2 align="center">Getting Started</h2>
 
 ### Requirements 
 
@@ -167,4 +167,4 @@ Give a ⭐️ if you liked!
 ### Credits
 
 Special thanks to [Lucas Ruy](https://github.com/LucasRuy), one of the best developers I've ever worked with.<br />
-Special thanks to [Cristiano Rocha](https://github.com/CrisFeit), inspired by your [VtexSync](https://github.com/CrisFeit/Vtex-Sync).
+Special thanks to [Cristiano Rocha](https://github.com/CrisFeit), inspired by your [VtexSync](https://github.com/CrisFeit/Vtex-Sync). -->
