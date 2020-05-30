@@ -1,47 +1,35 @@
 {
-  "name": "vtex-webpack",
-  "version": "2.0.0",
-  "description": "Webpack to development store in vtex",
-  "main": "src",
-  "scripts": {
-    "dev": "webpack --config webpack.config.js --watch  --mode development",
-    "build": "webpack --config webpack.config.js  --mode production"
-  },
-  "author": {
-    "name": "Rodrigo Reis",
-    "email": "br.rodrigoreis@gmail.com",
-    "homepage": "www.rodrigoreis.me"
-  },
-  "license": "ISC",
+  "name": "vtex-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:vtex-developers/vtex-boilerplate.git",
+  "author": "Rodrigo Reis <br.rodrigoreis@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "glob": "^7.1.4",
-    "html-webpack-pug-plugin": "^2.0.0",
-    "node-sass": "^4.13.1",
-    "sass-rem": "^2.0.1",
-    "stylelint": "^10.1.0",
-    "stylelint-config-recommended-scss": "^3.3.0",
-    "stylelint-scss": "^3.9.2",
-    "webpack-glob-entry": "^2.1.1"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-transform-async-to-generator": "^7.5.0",
-    "@babel/plugin-transform-runtime": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "autoprefixer": "^9.6.1",
-    "babel-loader": "^8.0.6",
-    "babel-runtime": "^6.26.0",
+    "@babel/core": "^7.10.2",
+    "autoprefixer": "^9.8.0",
+    "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.2.2",
     "clean-webpack-plugin": "^3.0.0",
-    "css-loader": "^3.1.0",
+    "css-loader": "^3.5.3",
+    "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.36.1",
-    "webpack-cli": "^3.3.6"
+    "pug": "^3.0.0",
+    "pug-loader": "^2.4.0",
+    "sass-loader": "^8.0.2",
+    "webpack": "^4.43.0",
+    "webpack-glob-entries": "^1.0.1",
+    "webpack-glob-entry": "^2.1.1"
+  },
+  "scripts": {
+    "dev": "webpack --config ./webpack/webpack.dev.js --watch  --mode development",
+    "build": "webpack --config ./webpack/webpack.prod.js  --mode production"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.11"
   }
 }

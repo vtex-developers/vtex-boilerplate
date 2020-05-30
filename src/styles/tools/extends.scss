@@ -1,0 +1,28 @@
+%center {
+  margin: 0 auto;
+}
+
+%flex-column{ 
+  display: flex;
+  flex-direction: column;
+} 
+
+%flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-spaced {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+%flex-column-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
