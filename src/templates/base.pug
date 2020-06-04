@@ -1,6 +1,5 @@
 
 - var $templateName = '';
-- var $storeNameUpper = '';
 - var $templateClass = '';
 block vars
 
@@ -13,18 +12,18 @@ html(xmlns='http://www.w3.org/1999/xhtml', xmlns:vtex='http://www.vtex.com.br/20
     //- Styles
     block styles
     //- Theme Styles/Scripts
-    vtex:template(id=`${$storeNameUpper}-global-Styles`)/
+    vtex:template(id=`Common-Styles`)/
 
     block richSnippetsHead
 
   body
-    vtex:template(id=`${storeNameUpper}-Header`)/
+    vtex:template(id=`Header`)/
     //- Main Content
     main(role='main', class=`${$templateClass}-main`)
         block content
     //- Footer
     block footer
-    vtex:template(id=`${storeNameUpper}-Footer`)/
+    vtex:template(id=`Footer`)/
     //- Scripts
     block scripts
-        vtex:template(id=`${$storeNameUpper}-global-Scripts`)/
+        vtex:template(id=`Common-Scripts`)/

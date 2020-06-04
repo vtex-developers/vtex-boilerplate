@@ -1,10 +1,11 @@
 const path = require('path');
 const fs = require('fs');
 const entry = require('webpack-glob-entry');
-const { CleanWebpackPlugin }= require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { outputFilename } = require('./helpers')
 
 const PATHS = {
 	src: path.join(__dirname, '../src'),
@@ -15,12 +16,6 @@ const PATHS = {
 	commonOutput: path.join(__dirname, '../dist/common'),
 }
 const PAGES = fs.readdirSync(`${PATHS.pages}/`)
-
-const outputFilename = (entry, output) => {
-	return entry.resource.includes('common') 
-		? `common/[name]/[name].${output}`
-		: `pages/[name]/[name].${output}`
-}
 
 const config = {
 	entry: entry(`${PATHS.pages}/**/*.js`, `${PATHS.common}/*.js`),
