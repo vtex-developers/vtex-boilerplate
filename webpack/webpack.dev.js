@@ -1,10 +1,10 @@
-const path = require('path');
-const entry = require('webpack-glob-entry');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const { CleanWebpackPlugin }= require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path')
+const entry = require('webpack-glob-entry')
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+const { CleanWebpackPlugin }= require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-const STORE_NAME = '';
+const STORE_NAME = ''
 
 const PATHS = {
 	dist: path.join(__dirname, '../dist'),
@@ -57,6 +57,6 @@ const config = {
       ],
     }),
 	],
-};
+}
 
-module.exports = config;
+module.exports = config

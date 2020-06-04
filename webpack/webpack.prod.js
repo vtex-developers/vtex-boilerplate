@@ -1,10 +1,10 @@
-const path = require('path');
-const fs = require('fs');
-const entry = require('webpack-glob-entry');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const fs = require('fs')
+const entry = require('webpack-glob-entry')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { outputFilename } = require('./helpers')
 
 const PATHS = {
@@ -21,7 +21,7 @@ const config = {
 	entry: entry(`${PATHS.pages}/**/*.js`, `${PATHS.common}/*.js`),
 	output: {
 		path: path.resolve(__dirname, PATHS.dist),
-		filename: ({ chunk: { entryModule }}) => outputFilename(entryModule, 'js'),
+		filename: ({ chunk: { entryModule } }) => outputFilename(entryModule, 'js'),
 	},
 	module: {
 		rules: [
@@ -34,7 +34,7 @@ const config = {
 			},
 			{
 				test: /\.pug$/,
-    		loader: 'pug-loader',
+				loader: 'pug-loader',
 				query: { pretty: false },
 			},
 			{
@@ -60,6 +60,6 @@ const config = {
     }),
 		new OptimizeCSSAssets(),
 	],
-};
+}
 
-module.exports = config;
+module.exports = config
