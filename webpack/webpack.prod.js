@@ -10,15 +10,15 @@ const { outputFilename } = require('./helpers')
 const PATHS = {
 	src: path.join(__dirname, '../src'),
 	dist: path.join(__dirname, '../dist'),
-	pages: path.join(__dirname, '../src/pages'),
-	pagesOutput: path.join(__dirname, '../dist/pages'),
+	views: path.join(__dirname, '../src/views'),
+	viewsOutput: path.join(__dirname, '../dist/views'),
 	common: path.join(__dirname, '../src/common'),
 	commonOutput: path.join(__dirname, '../dist/common'),
 }
-const PAGES = fs.readdirSync(`${PATHS.pages}/`)
+const VIEWS = fs.readdirSync(`${PATHS.views}/`)
 
 const config = {
-	entry: entry(`${PATHS.pages}/**/*.js`, `${PATHS.common}/*.js`),
+	entry: entry(`${PATHS.views}/**/*.js`, `${PATHS.common}/*.js`),
 	output: {
 		path: path.resolve(__dirname, PATHS.dist),
 		filename: ({ chunk: { entryModule } }) => outputFilename(entryModule, 'js'),
@@ -49,9 +49,9 @@ const config = {
 		],
 	},
 	plugins: [
-		...PAGES.map(page => new HtmlWebpackPlugin({
-			template: `${PATHS.pages}/${page}/index.pug`,
-			filename: `${PATHS.pagesOutput}/${page}/index.html`,
+		...VIEWS.map(page => new HtmlWebpackPlugin({
+			template: `${PATHS.views}/${page}/index.pug`,
+			filename: `${PATHS.viewsOutput}/${page}/index.html`,
 			inject: false,
 		})),
     new CleanWebpackPlugin(),

@@ -8,12 +8,12 @@ const STORE_NAME = ''
 
 const PATHS = {
 	dist: path.join(__dirname, '../dist'),
-	pages: path.join(__dirname, '../src/pages'),
+	views: path.join(__dirname, '../src/views'),
 	common: path.join(__dirname, '../src/common'),
 }
 
 const config = {
-	entry: entry(`${PATHS.pages}/**/*.js`, `${PATHS.common}/*.js`),
+	entry: entry(`${PATHS.views}/**/*.js`, `${PATHS.common}/*.js`),
 	output: {
 		path: path.resolve(__dirname, PATHS.dist),
 		filename: '[name].js'
