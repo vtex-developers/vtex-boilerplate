@@ -1,28 +1,52 @@
 const path = require('path')
-const fs = require('fs')
 const entry = require('webpack-glob-entry')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { outputFilename } = require('./helpers')
+const { output, outputHtml } = require('./utils/helpers')
 
-const PATHS = {
-	src: path.join(__dirname, '../src'),
-	dist: path.join(__dirname, '../dist'),
-	views: path.join(__dirname, '../src/views'),
-	viewsOutput: path.join(__dirname, '../dist/views'),
-	common: path.join(__dirname, '../src/common'),
-	commonOutput: path.join(__dirname, '../dist/common'),
-}
-const VIEWS = fs.readdirSync(`${PATHS.views}/`)
+const { 
+	PATHS, 
+	PAGES, 
+	SUB_TEMPLATES,
+	SHELVES_TEMPLATES,
+	CUSTOM_TEMPLATES,
+} = require('./utils/variables')
 
 const config = {
-	entry: entry(`${PATHS.views}/**/*.js`, `${PATHS.common}/*.js`),
+	entry: entry(`${PATHS.pages}/**/*.js`, `${PATHS.global}/*.js`),
 	output: {
 		path: path.resolve(__dirname, PATHS.dist),
-		filename: ({ chunk: { entryModule } }) => outputFilename(entryModule, 'js'),
+		filename: ({ chunk }) => output(chunk, 'js'),
 	},
+	plugins: [
+		...PAGES.map(page => new HtmlWebpackPlugin({
+			template: `${PATHS.pages}/${page}/index.pug`,
+			filename: `${PATHS.pagesDist}/${page}/index.html`,
+			inject: false,
+		})),
+		...SUB_TEMPLATES.map(template => new HtmlWebpackPlugin({
+			template: `${PATHS.templates}/Sub/${template}`,
+			filename: `${PATHS.templatesDist}/Sub/${outputHtml(template)}.html`,
+			inject: false,
+		})),
+		...SHELVES_TEMPLATES.map(template => new HtmlWebpackPlugin({
+			template: `${PATHS.templates}/Shelves/${template}`,
+			filename: `${PATHS.templatesDist}/Shelves/${outputHtml(template)}.html`,
+			inject: false,
+		})),
+		...CUSTOM_TEMPLATES.map(template => new HtmlWebpackPlugin({
+			template: `${PATHS.templates}/Custom/${template}`,
+			filename: `${PATHS.templatesDist}/Custom/${outputHtml(template)}.html`,
+			inject: false,
+		})),
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+			moduleFilename: chunk => output(chunk, 'css')
+    }),
+		new OptimizeCSSAssets(),
+	],
 	module: {
 		rules: [
 			{
@@ -35,7 +59,7 @@ const config = {
 			{
 				test: /\.pug$/,
 				loader: 'pug-loader',
-				query: { pretty: false },
+				query: { pretty: true },
 			},
 			{
 				test: /\.scss$/,
@@ -48,18 +72,6 @@ const config = {
 			},
 		],
 	},
-	plugins: [
-		...VIEWS.map(page => new HtmlWebpackPlugin({
-			template: `${PATHS.views}/${page}/index.pug`,
-			filename: `${PATHS.viewsOutput}/${page}/index.html`,
-			inject: false,
-		})),
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-			moduleFilename: ({ entryModule }) => outputFilename(entryModule, 'css')
-    }),
-		new OptimizeCSSAssets(),
-	],
 }
 
 module.exports = config

@@ -1,7 +1,7 @@
 import boostrap from './boostrap'
 
-function init() {
-  boostrap.init()
+function utils() {
+  boostrap()
 }
 
-export default { init }
+export default utils

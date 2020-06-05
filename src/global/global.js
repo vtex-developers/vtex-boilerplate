@@ -1,11 +1,11 @@
 import utils from './utils'
 import Header from './Header/Header'
 
-import './global.scss'
+import './Global.scss'
 
 function global() {
-  utils.init()
-  Header.init()
+  utils()
+  Header()
 }
 
 document.addEventListener('DOMContentLoaded', global())

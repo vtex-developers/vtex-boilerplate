@@ -1,11 +1,7 @@
-import querySelector from './selectors'
-
-function init() {
-  removeBootstrap()
-}
+import Selector from './selectors'
 
 function removeBootstrap() {
-  [...querySelector.allLinks].map(link => {
+  [...Selector.allLinks].map(link => {
     if (
       link.href.match(/bootstrap/) ||
       link.href.match(/style.css/) ||
@@ -16,4 +12,4 @@ function removeBootstrap() {
   })
 }
 
-export default { init }
+export default removeBootstrap

@@ -1,5 +1,5 @@
-function init () {
-  console.log('header')
+function Header() {
+  console.log('uva')
 }
 
-export default { init }
+export default Header
