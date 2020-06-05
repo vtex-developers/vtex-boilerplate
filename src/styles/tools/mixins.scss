@@ -1,39 +1,11 @@
-@mixin arrow-generator($direction, $color, $size) {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  
-  $directions: top, right, bottom, left;
-  @for $i from 1 through length($directions) {
-      @if nth($directions, $i) == $direction {
-          border-#{get-item($directions, $i, -1)}: $size solid transparent; 
-          border-#{get-item($directions, $i, 1)}: $size solid transparent; 
-          border-#{get-item($directions, $i, 2)}: $size solid $color; 
-      } 
-  }
+@function z-index($key) {
+  @return map-get($z-index, $key);
 }
 
-@mixin themify($themes) {
-  @each $theme, $map in $themes {
-    .theme-#{$theme} & {
-      $theme-map: () !global;
-      @each $key, $submap in $map {
-        $value: map-get(map-get($themes, $theme), '#{$key}');
-        $theme-map: map-merge($theme-map, ($key: $value)) !global;
-      }
-      @content;
-      $theme-map: null !global;
-    }
-  }
+@mixin z-index($key) {
+  z-index: z-index($key);
 }
 
-@function themed($key) {
-  @return map-get($theme-map, $key);
-}
-
-
-@mixin box-shadow {
-  @include themify($themes) {
-    box-shadow: 0px 0px 15px -8px themed('shadow');
-  }
-}
+$z-index: (
+  header: 1,
+);

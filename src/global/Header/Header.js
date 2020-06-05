@@ -1,5 +1,12 @@
-function init () {
-  console.log('header')
+const main = () => {
+  bodyEvent()
 }
 
-export default { init }
+const bodyEvent = () => {
+  document.querySelector('body')
+    .addEventListener('click', () => {
+      console.log('is body event')
+    })
+}
+
+export default main

@@ -1,11 +1,13 @@
+import './Home.scss'
+
 const main = () => {
-  bodyEvent()
+  eventHome()
 }
 
-const bodyEvent = () => {
+const eventHome = () => {
   document.querySelector('body')
     .addEventListener('click', () => {
-      console.log('is body event')
+      console.log('cliced this')
     })
 }
 

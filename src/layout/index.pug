@@ -12,7 +12,7 @@ html(xmlns='http://www.w3.org/1999/xhtml', xmlns:vtex='http://www.vtex.com.br/20
     //- Styles
     block styles
     //- Theme Styles/Scripts
-    vtex:template(id=`Common-Styles`)/
+    vtex:template(id=`Global-Styles`)/
 
     block richSnippetsHead
 
@@ -20,10 +20,10 @@ html(xmlns='http://www.w3.org/1999/xhtml', xmlns:vtex='http://www.vtex.com.br/20
     vtex:template(id=`Header`)/
     //- Main Content
     main(role='main', class=`${$templateClass}-main`)
-        block content
+      block content
     //- Footer
     block footer
-    vtex:template(id=`Footer`)/
+      vtex:template(id=`Footer`)/
     //- Scripts
     block scripts
-        vtex:template(id=`Common-Scripts`)/
+      vtex:template(id=`Global-Scripts`)/

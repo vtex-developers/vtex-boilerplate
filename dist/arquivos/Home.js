@@ -81,19 +81,31 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/pages/Category/Category.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/pages/Home/Home.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/pages/Category/Category.js":
-/*!****************************************!*\
-  !*** ./src/pages/Category/Category.js ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./src/pages/Home/Home.js":
+/*!********************************!*\
+  !*** ./src/pages/Home/Home.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("console.log('is category');\n\n//# sourceURL=webpack:///./src/pages/Category/Category.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Home_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Home.scss */ \"./src/pages/Home/Home.scss\");\n/* harmony import */ var _Home_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Home_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\nconst main = () => {\n  eventHome();\n};\n\nconst eventHome = () => {\n  document.querySelector('body').addEventListener('click', () => {\n    console.log('cliced this');\n  });\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (main);\n\n//# sourceURL=webpack:///./src/pages/Home/Home.js?");
+
+/***/ }),
+
+/***/ "./src/pages/Home/Home.scss":
+/*!**********************************!*\
+  !*** ./src/pages/Home/Home.scss ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/pages/Home/Home.scss?");
 
 /***/ })
 

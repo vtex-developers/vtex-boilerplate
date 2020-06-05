@@ -1,0 +1,15 @@
+extends ../../layout/index.pug
+
+//- Template variables
+block vars
+  - var $templateName = 'Home';
+  - var $templateClass = 'home';
+//- Page styles
+block append styles
+  link(rel='stylesheet', href=`/arquivos/${$templateName}.css`, media='all')/
+
+//- Main Content
+block content
+  div home
+block append scripts
+  script(type='text/javascript', src=`/arquivos/${$templateName}.js`) 
