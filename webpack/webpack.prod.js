@@ -13,7 +13,6 @@ const {
 	SHELVES_TEMPLATES,
 	CUSTOM_TEMPLATES,
 } = require('./utils/variables')
-
 const config = {
 	entry: entry(`${PATHS.pages}/**/*.js`, `${PATHS.global}/*.js`),
 	output: {

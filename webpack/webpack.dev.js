@@ -1,9 +1,13 @@
 const path = require('path')
+
+const Dotenv = require('dotenv-webpack')
 const entry = require('webpack-glob-entry')
+
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin }= require('clean-webpack-plugin')
+
 const { outputHtml } = require('./utils/helpers')
 const { 
 	PATHS, 
@@ -21,6 +25,28 @@ const config = {
 		filename: 'arquivos/[name].js'
 	},
 	plugins: [
+		new Dotenv({
+			path: './.env',
+			safe: true,
+		}),
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+			filename: '/arquivos/[name].css'
+		}),
+		new BrowserSyncPlugin({
+      open: false,
+      https: true,
+      ui: false,
+      host: `${STORE_NAME}.vtexlocal.com.br`,
+      startpath: '/admin/login/',
+      proxy: `https://${STORE_NAME}.vtexcommercestable.com.br`,
+      serveStatic: [
+        {
+          route: '/arquivos',
+          dir: `${PATHS.dist}/arquivos/`,
+        },
+      ],
+		}),
 		...PAGES.map(page => new HtmlWebpackPlugin({
 			template: `${PATHS.pages}/${page}/index.pug`,
 			filename: `${PATHS.pagesDist}/${page}/index.html`,
@@ -41,24 +67,6 @@ const config = {
 			filename: `${PATHS.templatesDist}/Custom/${outputHtml(template)}.html`,
 			inject: false,
 		})),
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-			filename: '/arquivos/[name].css'
-		}),
-		new BrowserSyncPlugin({
-      open: false,
-      https: true,
-      ui: false,
-      host: `${STORE_NAME}.vtexlocal.com.br`,
-      startpath: '/admin/login/',
-      proxy: `https://${STORE_NAME}.vtexcommercestable.com.br`,
-      serveStatic: [
-        {
-          route: '/arquivos',
-          dir: `${PATHS.dist}/arquivos/`,
-        },
-      ],
-    }),
 	],
 	module: {
 		rules: [
