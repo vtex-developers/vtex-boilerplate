@@ -3,6 +3,13 @@ const { PATHS } = require('../utils/constants')
 
 const rules = [
   {
+    test: /\.(png|jpe?g|gif)$/i,
+    loader: 'file-loader',
+    options: {
+      name: '[path][name].[ext]',
+    },
+  },
+  {
     test: /\.m?js$/,
     exclude: /node_modules/,
     use: {
