@@ -18,7 +18,7 @@ const config = {
 	entry: entry(`${PATHS.pages}/**/*.js`, `${PATHS.global}/*.js`),
 	output: {
 		path: path.resolve(__dirname, PATHS.dist),
-		filename: '[name].js'
+		filename: 'arquivos/[name].js'
 	},
 	plugins: [
 		...PAGES.map(page => new HtmlWebpackPlugin({
@@ -43,7 +43,7 @@ const config = {
 		})),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-			filename: '[name].css'
+			filename: '/arquivos/[name].css'
 		}),
 		new BrowserSyncPlugin({
       open: false,
@@ -55,7 +55,7 @@ const config = {
       serveStatic: [
         {
           route: '/arquivos',
-          dir: PATHS.dist,
+          dir: `${PATHS.dist}/arquivos/`,
         },
       ],
     }),
@@ -78,8 +78,13 @@ const config = {
 				test: /\.scss$/,
 				use: [
           MiniCssExtractPlugin.loader, 
-          'css-loader', 
-          'sass-loader'
+					'css-loader', 
+					{
+						loader: 'sass-loader',
+						options: {
+							prependData: `@import '${PATHS.styles}/settings/index.scss';`
+						}
+					}
         ]
 			},
 		],

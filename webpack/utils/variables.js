@@ -5,6 +5,7 @@ const STORE_NAME = 'regattatecidos'
 
 const PATHS = {
 	src: path.join(__dirname, '../../src'),
+	styles: path.join(__dirname, '../../src/styles'),
 	dist: path.join(__dirname, '../../dist'),
 	global: path.join(__dirname, '../../src/global'),
 	pages: path.join(__dirname, '../../src/pages'),

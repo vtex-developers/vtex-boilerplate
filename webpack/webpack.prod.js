@@ -67,7 +67,12 @@ const config = {
           MiniCssExtractPlugin.loader, 
           'css-loader', 
           'postcss-loader', 
-          'sass-loader'
+					{
+						loader: 'sass-loader',
+						options: {
+							prependData: `@import '${PATHS.styles}/settings/index.scss';`
+						}
+					}
         ]
 			},
 		],
