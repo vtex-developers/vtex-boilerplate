@@ -1,5 +1,12 @@
-function Header() {
-  console.log('uva')
+const main = () => {
+  bodyEvent()
 }
 
-export default Header
+const bodyEvent = () => {
+  document.querySelector('body')
+    .addEventListener('click', () => {
+      console.log('is body event')
+    })
+}
+
+export default main

@@ -1,3 +1,14 @@
 import './Home.scss'
 
-console.log('eae bonitão')
+const main = () => {
+  eventHome()
+}
+
+const eventHome = () => {
+  document.querySelector('body')
+    .addEventListener('click', () => {
+      console.log('cliced this')
+    })
+}
+
+export default main

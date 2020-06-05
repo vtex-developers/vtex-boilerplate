@@ -1,11 +1,12 @@
-import utils from './utils'
-import Header from './Header/Header'
+import './utils/bootstrap/index'
+import header from './Header/Header'
+import footer from './Footer/Footer'
 
 import './Global.scss'
 
-function global() {
-  utils()
-  Header()
+const main = () => {
+  header()
+  footer()
 }
 
-document.addEventListener('DOMContentLoaded', global())
+document.addEventListener('DOMContendLoaded', main())
