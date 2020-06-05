@@ -1,22 +1,11 @@
 const path = require('path')
-
-const Dotenv = require('dotenv-webpack')
 const entry = require('webpack-glob-entry')
-
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin }= require('clean-webpack-plugin')
 
-const { outputHtml } = require('./utils/helpers')
-const { 
-	PATHS, 
-	PAGES, 
-	SUB_TEMPLATES,
-	SHELVES_TEMPLATES,
-	CUSTOM_TEMPLATES,
-	STORE_NAME,
-} = require('./utils/variables')
+const { PATHS, STORE_NAME } = require('./utils/variables')
+const commonRules = require('./common/rules')
+const commonPlugins = require('./common/plugins')
 
 const config = {
 	entry: entry(`${PATHS.pages}/**/*.js`, `${PATHS.global}/*.js`),
@@ -24,12 +13,13 @@ const config = {
 		path: path.resolve(__dirname, PATHS.dist),
 		filename: 'arquivos/[name].js'
 	},
+	module: {
+		rules: [
+			...commonRules,
+		],
+	},
 	plugins: [
-		new Dotenv({
-			path: './.env',
-			safe: true,
-		}),
-    new CleanWebpackPlugin(),
+		...commonPlugins,
     new MiniCssExtractPlugin({
 			filename: '/arquivos/[name].css'
 		}),
@@ -47,56 +37,8 @@ const config = {
         },
       ],
 		}),
-		...PAGES.map(page => new HtmlWebpackPlugin({
-			template: `${PATHS.pages}/${page}/index.pug`,
-			filename: `${PATHS.pagesDist}/${page}/index.html`,
-			inject: false,
-		})),
-		...SUB_TEMPLATES.map(template => new HtmlWebpackPlugin({
-			template: `${PATHS.templates}/Sub/${template}`,
-			filename: `${PATHS.templatesDist}/Sub/${outputHtml(template)}.html`,
-			inject: false,
-		})),
-		...SHELVES_TEMPLATES.map(template => new HtmlWebpackPlugin({
-			template: `${PATHS.templates}/Shelves/${template}`,
-			filename: `${PATHS.templatesDist}/Shelves/${outputHtml(template)}.html`,
-			inject: false,
-		})),
-		...CUSTOM_TEMPLATES.map(template => new HtmlWebpackPlugin({
-			template: `${PATHS.templates}/Custom/${template}`,
-			filename: `${PATHS.templatesDist}/Custom/${outputHtml(template)}.html`,
-			inject: false,
-		})),
 	],
-	module: {
-		rules: [
-			{
-				test: /\.m?js$/,
-				exclude: /node_modules/,
-				use: {
-						loader: 'babel-loader'
-				},
-			},
-			{
-				test: /\.pug$/,
-				loader: 'pug-loader',
-				query: { pretty: true },
-			},
-			{
-				test: /\.scss$/,
-				use: [
-          MiniCssExtractPlugin.loader, 
-					'css-loader', 
-					{
-						loader: 'sass-loader',
-						options: {
-							prependData: `@import '${PATHS.styles}/settings/index.scss';`
-						}
-					}
-        ]
-			},
-		],
-	},
+
 }
 
 module.exports = config

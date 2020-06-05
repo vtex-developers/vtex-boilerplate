@@ -3,7 +3,6 @@ const output = (entry, output) => {
 		? `global/[name].${output}`
 		: `pages/[name]/[name].${output}`
 }
-
 const outputHtml = file => {
 	return file.replace('.pug', '')
 }
