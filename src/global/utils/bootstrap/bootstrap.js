@@ -14,7 +14,7 @@ import Selector from '../selectors'
   }
   return Promise.resolve(removeBootstrap())
     .then(() => console.log('Removed Bootstrap successfully'))
-    .catch(err => console.error(`Bootstrap successfully: ${err}`))
+    .catch(err => console.error(`Removed Bootstrap error: ${err}`))
 })()
 
 
