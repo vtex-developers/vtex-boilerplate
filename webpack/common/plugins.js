@@ -9,7 +9,7 @@ const {
   SUB_TEMPLATES,
   SHELVES_TEMPLATES,
   CUSTOM_TEMPLATES,
-} = require('../utils/variables')
+} = require('../utils/constants')
 const { outputHtml } = require('../utils/helpers')
 const env = require('../../env/app')
 

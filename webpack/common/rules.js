@@ -1,5 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const { PATHS } = require('../utils/variables')
+const { PATHS } = require('../utils/constants')
 
 const rules = [
   {

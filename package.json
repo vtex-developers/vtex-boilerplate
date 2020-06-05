@@ -35,7 +35,7 @@
     "webpack-glob-entry": "^2.1.1"
   },
   "scripts": {
-    "dev": "webpack --config ./webpack/webpack.dev.js --watch --mode development --env.STORE_NAME='dsodsokso'",
+    "dev": "webpack --config ./webpack/webpack.dev.js --watch --mode development --env.STORE_NAME={{}}",
     "build": "webpack --config ./webpack/webpack.prod.js  --mode production"
   },
   "devDependencies": {

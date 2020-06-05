@@ -3,7 +3,7 @@ const entry = require('webpack-glob-entry')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-const { PATHS } = require('./utils/variables')
+const { PATHS } = require('./utils/constants')
 const commonRules = require('./common/rules')
 const commonPlugins = require('./common/plugins')
 
