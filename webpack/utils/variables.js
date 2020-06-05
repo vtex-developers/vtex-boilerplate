@@ -1,7 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 
-const STORE_NAME = 'regattatecidos'
+const STORE_NAME = ''
 
 const PATHS = {
 	src: path.join(__dirname, '../../src'),
