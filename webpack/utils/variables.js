@@ -1,8 +1,6 @@
 const path = require('path')
 const fs = require('fs')
 
-const STORE_NAME = 'regattatecidos'
-
 const PATHS = {
 	src: path.join(__dirname, '../../src'),
 	styles: path.join(__dirname, '../../src/styles'),
@@ -26,5 +24,4 @@ module.exports = {
 	SUB_TEMPLATES,
 	SHELVES_TEMPLATES,
 	PATHS,
-	STORE_NAME
 }
