@@ -65,7 +65,7 @@ This webpack was basically made to supply the need of multiple entries like Java
   ```js
     const PATHS = {
       ....
-      common: path.join(__dirname, '../src/common'),
+      global: path.join(__dirname, '../src/global'),
     }
   ```
 This variabel is responsible for making the exchange of files from your machine to `https://{{yourstore}}.vtexcommercestable.com.br/arquivos/` from vtex. Remembering that the files must have the same name.
@@ -99,7 +99,6 @@ After you start the terminal it will open a link for you to login with your stor
 * [Sass](https://sass-lang.com)
  
 
-
 ### Developed with
 
 * [Webpack](https://webpack.js.org/) - Robust bundle files.
@@ -124,5 +123,4 @@ Give a ⭐️ if you liked!
  
 ### Credits
 
-Special thanks to [Lucas Ruy](https://github.com/LucasRuy), one of the best developers I've ever worked with.<br />
 Special thanks to [Cristiano Rocha](https://github.com/CrisFeit), inspired by your [VtexSync](https://github.com/CrisFeit/Vtex-Sync).
