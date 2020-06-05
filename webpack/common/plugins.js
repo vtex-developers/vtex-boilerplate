@@ -1,9 +1,8 @@
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-const webpack = require('webpack')
-const env = require('../../env/config')
 const {
   PATHS,
   PAGES,
@@ -12,6 +11,7 @@ const {
   CUSTOM_TEMPLATES,
 } = require('../utils/variables')
 const { outputHtml } = require('../utils/helpers')
+const env = require('../../env/app')
 
 const plugins = [
   new CleanWebpackPlugin(),
