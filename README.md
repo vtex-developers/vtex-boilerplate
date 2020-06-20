@@ -121,6 +121,3 @@ This project is [MIT](https://github.com/vtex-developers/vtex-webpack/blob/maste
 
 Give a ⭐️ if you liked!
  
-### Credits
-
-Special thanks to [Cristiano Rocha](https://github.com/CrisFeit), inspired by your [VtexSync](https://github.com/CrisFeit/Vtex-Sync).
